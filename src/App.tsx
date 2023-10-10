@@ -1,9 +1,11 @@
 import React from 'react';
+import './Styles/App.scss'
+import Home from './Components/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>Search-App</h1>
+      <Home/>
     </div>
   );
 }
