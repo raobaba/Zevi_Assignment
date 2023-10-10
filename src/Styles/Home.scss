@@ -2,36 +2,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css");
 .home-container {
-  background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNsb3RocyUyMG9uJTIwaGFuZ2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: #fff; /* Set text color to white */
-  text-align: center;
-
-  .search-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 300px; /* Adjust the width as needed */
-    padding: 50px; /* Adjust padding as needed */
-    border-radius: 5px; /* Add rounded corners */
+    background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNsb3RocyUyMG9uJTIwaGFuZ2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff; /* Set text color to white */
+    text-align: center;
+  
+    .search-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 300px; /* Adjust the width as needed */
+      padding: 50px; /* Adjust padding as needed */
+      border-radius: 5px; /* Add rounded corners */
+    }
+  
+    .zevi-logo {
+      position: absolute;
+      top: 10px;
+      right: -300px; 
+      font-size: 40px;
+      font-weight: bold;
+      color: #36454F;
+      font-family: 'Concert One', cursive;
+      @media (max-width: 1068px) {
+               right: -200px;
+        font-size: 24px;
+      }
+      @media (max-width: 868px) {
+        right: -100px;
+ font-size: 24px;
+}
+@media (max-width: 568px) {
+    right: 40%;
+font-size: 24px;
+}
+    
+    }
   }
-  .zevi-logo{
-    font-size: 40px;
-    margin-left: 50%;
-    font-weight: bold;
-    color: #36454F;
-    font-family: 'Concert One', cursive;
-    width:20%;
-}
-
-}
 
