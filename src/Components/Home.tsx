@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Search from "./Search";
 import TrendingProducts from "./TrendingProducts";
 import "../Styles/Home.scss";
 
 function Home() {
-  const [clicked, setClicked] = useState<boolean>(false);
+  const [clicked, setClicked] = useState(false);
+  const inputRef = useRef<HTMLInputElement | null>(null); // Specify the type as HTMLInputElement | null
+
   const handleInputClick = () => {
     setClicked(true);
   };
+
+  useEffect(() => {
+    const handleBodyClick = (e: MouseEvent) => {
+      if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
+        setClicked(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleBodyClick);
+
+    return () => {
+      document.body.removeEventListener("click", handleBodyClick);
+    };
+  }, []);
 
   return (
     <div className="home-container">
@@ -20,7 +36,7 @@ function Home() {
             height={50}
           />
         </div>
-        <Search handleInputClick={handleInputClick} />
+        <Search handleInputClick={handleInputClick} inputRef={inputRef} />
       </div>
       <div className="trending-container">
         <TrendingProducts clicked={clicked} />
