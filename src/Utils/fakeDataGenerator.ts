@@ -15,4 +15,15 @@ export const generateFakeClothingData = () => {
   return fakeClothingData;
 };
 
+export const generateFakePopularSuggestions = () => {
+  const fakeSuggestions = [];
 
+  for (let i = 0; i < 5; i++) {
+    // Generate a two-word clothing-related suggestion using Faker
+    const suggestion = `${faker.commerce.productAdjective()} ${faker.commerce.productMaterial()}`;
+
+    fakeSuggestions.push(suggestion);
+  }
+
+  return fakeSuggestions;
+};

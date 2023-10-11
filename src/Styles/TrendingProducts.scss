@@ -25,10 +25,30 @@
 }
 
 .trending-heading{
-  color: black;
+  color: grey;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: "Concert One", cursive;
 }
 .trending-image{
-  width: 110px;
+  width: 140px;
   height: 140px;
   border-radius: 5px;
+}
+.popular-suggestion{
+  color: grey;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-left: 20px;
+  font-family: "Concert One", cursive;
+}
+.suggestion li{
+  list-style-type: none;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

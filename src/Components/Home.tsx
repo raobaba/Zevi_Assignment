@@ -16,6 +16,8 @@ function Home() {
           <img
             src="https://ci3.googleusercontent.com/mail-sig/AIorK4zeD0TD5C_ug1RQ2gcR9f4Q75R7WkMp4RrWtmf8fDsinDbiE-DPb3yE5LhtVLVV6YcORm-UIas"
             alt="logo"
+            width={90}
+            height={50}
           />
         </div>
         <Search handleInputClick={handleInputClick} />
