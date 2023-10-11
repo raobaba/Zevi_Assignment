@@ -1,14 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import Search from "./Search";
 import TrendingProducts from "./TrendingProducts";
+import ProductFilter from "./ProductFilter";
+import ProductList from "./ProductList";
 import "../Styles/Home.scss";
 
 function Home() {
   const [clicked, setClicked] = useState(false);
-  const inputRef = useRef<HTMLInputElement | null>(null); // Specify the type as HTMLInputElement | null
+  const [userTyping, setUserTyping] = useState(false); // State to track if the user is typing
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleInputClick = () => {
     setClicked(true);
+  };
+
+  const handleInputChange = () => {
+    setUserTyping(true);
   };
 
   useEffect(() => {
@@ -36,13 +43,36 @@ function Home() {
             height={50}
           />
         </div>
-        <Search handleInputClick={handleInputClick} inputRef={inputRef} />
+        <Search
+          handleInputClick={handleInputClick}
+          inputRef={inputRef}
+          onInputChange={handleInputChange} // Add an onInputChange prop
+        />
       </div>
       <div className="trending-container">
-        <TrendingProducts clicked={clicked} />
+        {userTyping ? null : <TrendingProducts clicked={clicked} />}
+      </div>
+      <div>
+        {userTyping ? (
+          <div>
+            <ProductFilter
+              onSortChange={(ascending: boolean) => {
+                // Implement your sorting function
+              }}
+              onPriceFilterChange={(minPrice: number, maxPrice: number) => {
+                // Implement your price filtering function
+              }}
+              onRatingFilterChange={(rating: number) => {
+                // Implement your rating filtering function
+              }}
+            />
+            <ProductList />
+          </div>
+        ) : null}
       </div>
     </div>
   );
 }
 
 export default Home;
+

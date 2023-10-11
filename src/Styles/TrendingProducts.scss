@@ -61,6 +61,7 @@
   justify-content: flex-start;
   margin-top: 10px;
   margin-left: 20px;
+  font-family: sans-serif;
   font-weight: bold;
 }
 .trending-image {
@@ -74,6 +75,7 @@
   justify-content: flex-start;
   margin-top: 40px;
   margin-left: 20px;
+  font-family: sans-serif;
   font-weight: bold;
   @media (max-width: 800px) {
     margin-top: 300px;
@@ -83,6 +85,8 @@
   list-style-type: none;
   color: grey;
   display: flex;
+  font-size: 15px;
   justify-content: flex-start;
-  font-weight: bold;
+  font-family: sans-serif;
+  gap: 6px;
 }

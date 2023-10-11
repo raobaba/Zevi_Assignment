@@ -20,7 +20,7 @@ function TrendingProducts({ clicked }: TrendingProductsProps) {
 
   return (
     <div className={`trending-products ${clicked ? 'background-white' : ''}`}>
-      <h2 className="trending-heading">Latest Trends</h2>
+      {clicked && (<h2 className="trending-heading">Latest Trends</h2>)}
       <div className="product-list">
         {clothingData.map((item, index) => (
           <div className="product-item" key={index}>
@@ -29,7 +29,7 @@ function TrendingProducts({ clicked }: TrendingProductsProps) {
           </div>
         ))}
       </div>
-      <h3 className='popular-suggestion'>Popular Suggestions</h3>
+      {clicked && (<h3 className='popular-suggestion'>Popular Suggestions</h3>)}
       <div className='suggestion'>
         <ul>
           {suggestionData.map((suggestion, index) => (
