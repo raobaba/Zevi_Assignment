@@ -10,6 +10,7 @@
     "@types/node": "^16.18.58",
     "@types/react": "^18.2.27",
     "@types/react-dom": "^18.2.12",
+    "faker": "^6.6.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -41,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.1.0"
   }
 }

@@ -44,3 +44,31 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+Zevi(main folder)
+ >node_modules
+ >public
+ >src
+  >Components
+   >Filter.tsx
+   >Home.tsx
+   >ProductDetails.tsx
+   >ProductList.tsx
+   >Search.tsx
+   >TrendingProducts.tsx
+  >Styles
+   >Filter.scss
+   >Home.scss
+   >ProductDetails.scss
+   >ProductList.scss
+   >Search.scss
+   >TrendingProducts.scss
+   >App.scss
+  >App.tsx
+  >fakeDataGenerator.ts
+  >index.tsx
+ >package-lock.json
+ >package.json
+ >README.md
+ >tsconfig.json
