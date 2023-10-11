@@ -8,6 +8,20 @@
   gap: 30px;
   display: block;
   border-radius: 5px;
+  @media (max-width: 800px) {
+    width: 700px;
+    height: 700px;
+  }
+  @media (max-width: 712px) {
+    width: 600px;
+    height: 750px;
+    margin-top: 100px;
+  }
+  @media (max-width: 692px) {
+    width: 500px;
+    height: 800px;
+    margin-top: 100px;
+  }
 }
 
 .product-list {
@@ -17,38 +31,58 @@
   justify-content: center;
   gap: 10px;
   text-align: center;
+  @media (max-width: 800px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 5px;
+  }
+  @media (max-width: 712px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 5px;
+  }
+  @media (max-width: 692px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 5px;
+  }
 }
 .product-name {
   color: grey;
   font-size: 14px;
-
 }
 
-.trending-heading{
+.trending-heading {
   color: grey;
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;
   margin-left: 20px;
-  font-family: "Concert One", cursive;
+  font-weight: bold;
 }
-.trending-image{
+.trending-image {
   width: 140px;
   height: 140px;
   border-radius: 5px;
 }
-.popular-suggestion{
+.popular-suggestion {
   color: grey;
   display: flex;
   justify-content: flex-start;
   margin-top: 40px;
   margin-left: 20px;
-  font-family: "Concert One", cursive;
+  font-weight: bold;
+  @media (max-width: 800px) {
+    margin-top: 300px;
+  }
 }
-.suggestion li{
+.suggestion li {
   list-style-type: none;
-  color: black;
+  color: grey;
   display: flex;
   justify-content: flex-start;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
 }
