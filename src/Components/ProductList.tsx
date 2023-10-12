@@ -3,7 +3,7 @@ import "../Styles/ProductList.scss";
 import { FaStar, FaHeart } from "react-icons/fa";
 
 interface ProductListProps {
-  searchResults: any[]; // Define the type for your search results
+  searchResults: any[];
 }
 
 function generateStarIcons(rating: number) {
@@ -32,9 +32,7 @@ function ProductList({ searchResults }: ProductListProps) {
         {searchResults.map((item, index) => (
           <div key={index} className="product-item">
             <div className="like-icon" onClick={() => toggleLike(index)}>
-              <FaHeart
-                color={likedItems.includes(index) ? "red" : "gray"}
-              />
+              <FaHeart color={likedItems.includes(index) ? "red" : "gray"} />
             </div>
             <img src={item.image} alt={item.name} />
             <div className="view-product-button">View Product</div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/ProductFilter.scss";
 import { FaStar } from "react-icons/fa";
+
 type ProductFilterProps = {
   onSortChange: (ascending: boolean) => void;
   onPriceFilterChange: (minPrice: number, maxPrice: number) => void;
@@ -49,7 +50,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
         <label>
           <input
             type="checkbox"
-            checked={ascending}
+            checked={!ascending}
             onChange={handleSortChange}
           />{" "}
           Z to A
