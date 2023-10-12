@@ -21,19 +21,22 @@ export const generateFakePopularSuggestions = () => {
   return fakeSuggestions;
 };
 
-export const generateFakeFashionItems = () => {
+export const generateFakeFashionItems = (query = '') => {
   const fashionItems = [];
 
   for (let i = 0; i < 40; i++) {
     const fashionItem = {
-      image:faker.image.urlLoremFlickr({ category: 'fashion' }),
+      image: faker.image.urlLoremFlickr({ category: 'fashion' }),
       name: faker.commerce.productName(),
       price: faker.commerce.price(),
       discountPrice: faker.commerce.price(),
-      ratings:faker.commerce.price({ min: 1, max: 5 }),
-      review:faker.commerce.price({ min: 100, max: 10000 })
+      ratings: faker.commerce.price({ min: 1, max: 5 }),
+      review: faker.commerce.price({ min: 100, max: 10000 }),
     };
-    fashionItems.push(fashionItem);
+
+    if (!query || fashionItem.name.toLowerCase().includes(query.toLowerCase())) {
+      fashionItems.push(fashionItem);
+    }
   }
 
   return fashionItems;

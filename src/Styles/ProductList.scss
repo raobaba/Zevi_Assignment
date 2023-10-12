@@ -1,10 +1,59 @@
 .product-list-box {
-    width: 80%;
-    height: 400px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+  width: 80%;
+  height: 500px;
+  background-color: #fff;
+  overflow-y: scroll;
+  font-family: sans-serif;
+  color: black;
+
+  h2 {
+    color: black;
+    font-family: sans-serif;
+  }
+
+  .product-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 1px;
+  }
+
+  span {
     display: flex;
     justify-content: center;
-    align-items: center;
+    font-family: sans-serif;
+    font-size: 14px;
   }
-  
+
+  .product-item {
+    line-height: 1px;
+    position: relative; // Add relative positioning for positioning the like icon
+
+    img {
+      width: 190px;
+      height: 230px;
+      border-radius: 5px;
+    }
+
+    .like-icon {
+      position: absolute;
+      top: 10px; // Adjust this value as needed
+      right: 10px; // Adjust this value as needed
+      cursor: pointer;
+      background-color: transparent;
+      padding: 10px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+
+      svg {
+        font-size: 1.5rem;
+        color: gray; // Default color
+      }
+    }
+  }
+}

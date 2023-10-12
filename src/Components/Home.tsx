@@ -4,10 +4,12 @@ import TrendingProducts from "./TrendingProducts";
 import ProductFilter from "./ProductFilter";
 import ProductList from "./ProductList";
 import "../Styles/Home.scss";
+import { generateFakeFashionItems } from '../Utils/fakeDataGenerator'; // Import your data generation function
 
 function Home() {
   const [clicked, setClicked] = useState(false);
   const [userTyping, setUserTyping] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleInputClick = () => {
@@ -16,6 +18,10 @@ function Home() {
 
   const handleInputChange = () => {
     setUserTyping(true);
+  };
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
   };
 
   useEffect(() => {
@@ -32,21 +38,16 @@ function Home() {
     };
   }, []);
 
+  const searchResults = generateFakeFashionItems(searchQuery); // Generate search results
+
   return (
     <div className="home-container">
       <div className="search-container">
-        <div className="zevi-logo">
-          <img
-            src="https://ci3.googleusercontent.com/mail-sig/AIorK4zeD0TD5C_ug1RQ2gcR9f4Q75R7WkMp4RrWtmf8fDsinDbiE-DPb3yE5LhtVLVV6YcORm-UIas"
-            alt="logo"
-            width={90}
-            height={50}
-          />
-        </div>
         <Search
           handleInputClick={handleInputClick}
           inputRef={inputRef}
           onInputChange={handleInputChange}
+          onSearch={handleSearch}
         />
       </div>
       <div className="trending-container">
@@ -66,7 +67,7 @@ function Home() {
                 // Implement your rating filtering function
               }}
             />
-            <ProductList />
+            <ProductList searchResults={searchResults} />
           </div>
         ) : null}
       </div>
@@ -75,4 +76,3 @@ function Home() {
 }
 
 export default Home;
-

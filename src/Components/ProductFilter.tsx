@@ -55,6 +55,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
           Z to A
         </label>
       </details>
+      <br />
       <details>
         <summary>PRICE RANGE</summary>
         <label>
@@ -87,6 +88,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
           Above 3000
         </label>
       </details>
+      <br />
       <details>
         <summary>RATINGS</summary>
         {[1, 2, 3, 4, 5].map((rating) => (
