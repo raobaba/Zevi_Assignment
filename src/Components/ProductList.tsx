@@ -33,10 +33,11 @@ function ProductList({ searchResults }: ProductListProps) {
           <div key={index} className="product-item">
             <div className="like-icon" onClick={() => toggleLike(index)}>
               <FaHeart
-                color={likedItems.includes(index) ? "red" : "white"}
+                color={likedItems.includes(index) ? "red" : "gray"}
               />
             </div>
             <img src={item.image} alt={item.name} />
+            <div className="view-product-button">View Product</div>
             <p>{item.name}</p>
             <span>
               <p style={{ textDecoration: "line-through" }}>
@@ -64,4 +65,3 @@ function ProductList({ searchResults }: ProductListProps) {
 }
 
 export default ProductList;
-

@@ -33,6 +33,25 @@
       width: 190px;
       height: 230px;
       border-radius: 5px;
+      cursor: pointer;
+      &:hover + .view-product-button,
+      .view-product-button:hover {
+        display: block;
+      }
+    }
+    .view-product-button {
+      display: none;
+      position: absolute;
+      bottom: 105px;
+      width: calc(90% - 41px);
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+      margin-left: 19px;
+      border-radius: 0 0 5px 5px;
+      transition: display 5s ease-in-out;
     }
 
     .like-icon {
