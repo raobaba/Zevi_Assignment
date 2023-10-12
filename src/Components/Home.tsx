@@ -7,7 +7,7 @@ import "../Styles/Home.scss";
 
 function Home() {
   const [clicked, setClicked] = useState(false);
-  const [userTyping, setUserTyping] = useState(false); // State to track if the user is typing
+  const [userTyping, setUserTyping] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleInputClick = () => {
@@ -46,15 +46,15 @@ function Home() {
         <Search
           handleInputClick={handleInputClick}
           inputRef={inputRef}
-          onInputChange={handleInputChange} // Add an onInputChange prop
+          onInputChange={handleInputChange}
         />
       </div>
       <div className="trending-container">
-        {userTyping ? null : <TrendingProducts clicked={clicked} />}
+        {!userTyping && <TrendingProducts clicked={clicked} />}
       </div>
-      <div>
+      <div className={userTyping ? 'filter-list' : ''}>
         {userTyping ? (
-          <div>
+          <div className={userTyping ? 'list-filter' : ''}>
             <ProductFilter
               onSortChange={(ascending: boolean) => {
                 // Implement your sorting function

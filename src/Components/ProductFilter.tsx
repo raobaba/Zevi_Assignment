@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import '../Styles/ProductFilter.scss';
-
+import React, { useState } from "react";
+import "../Styles/ProductFilter.scss";
+import { FaStar } from "react-icons/fa";
 type ProductFilterProps = {
   onSortChange: (ascending: boolean) => void;
   onPriceFilterChange: (minPrice: number, maxPrice: number) => void;
@@ -35,66 +35,77 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
 
   return (
     <div className="product-filter">
-      <h2>Product Filters</h2>
-      <div>
-        <h3>Sort by Name</h3>
+      <h2>Sorting and Filter</h2>
+      <details>
+        <summary>NAME</summary>
         <label>
           <input
             type="checkbox"
             checked={ascending}
             onChange={handleSortChange}
-          />{' '}
+          />{" "}
           A to Z
         </label>
-      </div>
-      <div>
-        <h3>Filter by Price Range</h3>
         <label>
-          Below 500:
           <input
-            type="radio"
+            type="checkbox"
+            checked={ascending}
+            onChange={handleSortChange}
+          />{" "}
+          Z to A
+        </label>
+      </details>
+      <details>
+        <summary>PRICE RANGE</summary>
+        <label>
+          <input
+            type="checkbox"
             name="priceRange"
             checked={minPrice === 0 && maxPrice === 500}
             onChange={() => handlePriceFilterChange(0, 500)}
           />
+          Below 500
         </label>
         <label>
-          500 - 3000:
           <input
-            type="radio"
+            type="checkbox"
             name="priceRange"
             checked={minPrice === 500 && maxPrice === 3000}
             onChange={() => handlePriceFilterChange(500, 3000)}
           />
+          500 - 3000
         </label>
         <label>
-          Above 3000:
           <input
-            type="radio"
+            type="checkbox"
             name="priceRange"
             checked={minPrice === 3000}
-            onChange={() => handlePriceFilterChange(3000, Number.MAX_SAFE_INTEGER)}
+            onChange={() =>
+              handlePriceFilterChange(3000, Number.MAX_SAFE_INTEGER)
+            }
           />
+          Above 3000
         </label>
-      </div>
-      <div>
-        <h3>Filter by Ratings</h3>
+      </details>
+      <details>
+        <summary>RATINGS</summary>
         {[1, 2, 3, 4, 5].map((rating) => (
           <label key={rating}>
-            {rating} star:
             <input
-              type="radio"
+              type="checkbox"
               name="rating"
               value={rating}
               checked={selectedRating === rating}
               onChange={() => handleRatingFilterChange(rating)}
             />
+            {[...Array(rating)].map((_, index) => (
+              <FaStar key={index} className="star-icon" />
+            ))}
           </label>
         ))}
-      </div>
+      </details>
     </div>
   );
 };
 
 export default ProductFilter;
-
