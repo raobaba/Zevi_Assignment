@@ -16,6 +16,25 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     column-gap: 1px;
+    @media (max-width:1200px){
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1px;
+    }
+    @media (max-width:930px){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1px;
+    }
+    @media (max-width:630px){
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1px;
+    }
+    
   }
 
   span {
